@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Ubah Data Pelanggan</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css-tab/style1.css') }}"
+    />
+  </head>
+
+  <body>
+    <h2>Ubah Data</h2>
+    <form
+      action="http://localhost:5000/ubah_pelanggan/{{data[0]}}"
+      method="post"
+    >
+      No:<br />
+      <input type="hidden" name="id" value="{{data[0]}}" />
+      <input
+        type="text"
+        name="id"
+        size="15"
+        value="{{data[0]}}"
+        maxlength="4"
+        readonly
+      /><br />
+      Nama:<br />
+      <input
+        type="text"
+        name="nama"
+        size="50"
+        value="{{data[1]}}"
+        maxlength="40"
+      /><br />
+      No Telp:<br />
+      <input
+        type="text"
+        name="telp"
+        size="30"
+        value="{{data[2]}}"
+        maxlength="25"
+      /><br />
+      Alamat:<br />
+      <input
+        type="text"
+        name="alamat"
+        size="30"
+        value="{{data[3]}}"
+        maxlength="200"
+      /><br />
+      <p><input type="submit" value="Simpan" /></p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Tambah Data Pelanggan</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css-tab/style1.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Tambah Data</h2>
+
+    <form method="post" action="{{ url_for('tambah_pelanggan') }}">
+      Nama:<br />
+      <input type="text" name="nama" size="40" required /><br />
+      No Telp:<br />
+      <input type="number" name="telp" size="40" required /><br />
+      Alamat:<br />
+      <input type="text" name="alamat" size="40" required /><br />
+      <p><input type="submit" value="Simpan" /></p>
+    </form>
+  </body>
+</html>

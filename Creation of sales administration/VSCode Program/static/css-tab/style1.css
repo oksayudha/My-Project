@@ -1,0 +1,84 @@
+/* style.css */
+
+/* Gaya umum */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Gaya khusus untuk elemen form di atas */
+body {
+  background-color: #f7f7f7;
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+select {
+  height: 40px;
+}
+
+input[type="submit"] {
+  background-color: #4e8cff;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #2a6fd6;
+}

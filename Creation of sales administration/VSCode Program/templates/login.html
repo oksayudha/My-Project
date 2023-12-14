@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css-tab/login.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Silahkan Login</h1>
+      {% if pesan=="gagal" %}
+      <div class="alert alert-danger">
+        Login gagal! username dan password salah!
+      </div>
+      {% elif pesan=="logout" %}
+      <div class="alert alert-info">Anda telah berhasil logout</div>
+      {% elif pesan=="belum_login" %}
+      <div class="alert alert-danger">
+        Anda harus login untuk mengakses halaman admin
+      </div>
+      {% endif %}
+      <br />
+      <form action="/" method="post">
+        Username:<br />
+        <input type="text" name="username" size="25" /><br />
+        Password:<br />
+        <input type="password" name="password" size="25" /><br />
+        <p><input class="btn" type="submit" value="Login" /></p>
+      </form>
+    </div>
+  </body>
+</html>

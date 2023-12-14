@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Tambah Data Pemesanan</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css-tab/style1.css') }}"
+    />
+  </head>
+
+  <body>
+    <h2>Tambah Data Pemesanan</h2>
+
+    <form action="{{ url_for('tambah_pemesanan') }}" method="post">
+      Nama:<br />
+      <select id="nama" name="pesanan_plgn" required>
+        <option value="" disabled selected hidden>...</option>
+        {% for p in pelanggan %}
+        <option value="{{ p[0] }}">{{ p[0] }}</option>
+        {% endfor %}</select
+      ><br />
+      Jumlah Pesanan:<br />
+      <input
+        type="text"
+        name="pesanan_jml"
+        id="pesanan_jml"
+        size="40"
+        required
+      /><br />
+      Harga:<br />
+      <input
+        type="text"
+        name="pesanan_hrg"
+        id="pesanan_hrg"
+        size="25"
+        readonly
+      /><br />
+      Tanggal:
+      <input type="date" name="pesanan_tanggal" size="40" required />
+      <p><input type="submit" value="Simpan" /></p>
+    </form>
+
+    <script>
+      // Fungsi untuk mengupdate harga saat jumlah pesanan berubah
+      function updateHarga() {
+        var jumlah = parseInt(document.getElementById('pesanan_jml').value);
+        var hargaPerItem = {{ harga_per_item }}; // Mengambil nilai harga_per_item dari server
+
+        // Menghitung harga
+        var harga = jumlah * hargaPerItem;
+
+        // Memasukkan harga ke input harga
+        document.getElementById('pesanan_hrg').value = harga;
+      }
+
+      // Memanggil fungsi updateHarga() saat jumlah pesanan berubah
+      document.getElementById('pesanan_jml').addEventListener('change', updateHarga);
+    </script>
+  </body>
+</html>

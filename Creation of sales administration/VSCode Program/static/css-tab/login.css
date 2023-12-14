@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.container h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alert {
+  border: 1px solid #f44336;
+  background-color: #ffebee;
+  color: #f44336;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alert-danger {
+  border-color: #f44336;
+  background-color: #ffebee;
+  color: #f44336;
+}
+
+.alert-info {
+  border-color: #2196f3;
+  background-color: #e3f2fd;
+  color: #2196f3;
+}
+
+.container form input[type="text"],
+.container form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 16px;
+}
+
+.container form .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container form .btn:hover {
+  background-color: #555;
+}
+
+.container .pesan {
+  color: red;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .container h1 {
+    font-size: 30px;
+  }
+
+  .container form {
+    width: 100%;
+  }
+
+  .container form input[type="text"],
+  .container form input[type="password"] {
+    margin-bottom: 15px;
+  }
+}

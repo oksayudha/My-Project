@@ -1,0 +1,70 @@
+{% include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Data Pemesanan</h1>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+
+  <body>
+    <h2>Data Pemesanan</h2>
+    <table border="1">
+      <tr>
+        <th width="60">No</th>
+        <th width="60">ID Pemesanan</th>
+        <th width="150">Nama</th>
+        <th width="100">Jumlah Pesanan</th>
+        <th width="100">Harga</th>
+        <th width="100">Tanggal</th>
+        <th width="80">Ubah</th>
+        <th width="80">Hapus</th>
+      </tr>
+      {% for baris in container %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ baris[0] }}</td>
+        <td>{{ baris[1] }}</td>
+        <td>{{ baris[2] }}</td>
+        <td>{{ baris[3] }}</td>
+        <td>{{ baris[4] }}</td>
+        <td>
+          <a
+            href="http://localhost:5000/ubah_pemesanan/{{baris[0]}}"
+            class="btn"
+            >Ubah</a
+          >
+        </td>
+        <td>
+          <a
+            href="http://localhost:5000/hapus_pesanan/{{baris[0]}}"
+            class="btn btn-delete"
+            onclick="return confirm('Yakin data {{ baris[1] }} ingin dihapus??')"
+            >Hapus</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <div class="btn-container">
+      <a href="/tambah_pemesanan" class="btn">Tambah Data Pemesanan</a>
+    </div>
+  </body>
+  <section class="content">
+    <div class="container-fluid"></div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% include 'footer.html' %}
